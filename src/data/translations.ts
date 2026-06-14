@@ -21,6 +21,11 @@ export interface TranslationDict {
       occupancy: string;
       revenue: string;
     };
+    slides: {
+      title: string;
+      highlight: string;
+      subtitle: string;
+    }[];
   };
   trusted: {
     title: string;
@@ -266,7 +271,24 @@ export const translations = {
         bookings: "Daily Bookings",
         occupancy: "Average Occupancy",
         revenue: "Revenue Growth"
-      }
+      },
+      slides: [
+        {
+          title: "Manage Your Entire Hotel From",
+          highlight: "One Smart Platform",
+          subtitle: "Simplify check-ins, maximize dynamic pricing, integrate channel managers, and deliver world-class guest experiences with Ewan PMS."
+        },
+        {
+          title: "Maximize Direct Bookings & Escape",
+          highlight: "High OTA Commissions",
+          subtitle: "Transform your website into a high-yielding sales channel with our seamless booking engine and real-time channel manager."
+        },
+        {
+          title: "Unlock High-Performance Operations &",
+          highlight: "AI Yield Management",
+          subtitle: "Predict low-occupancy periods 6 weeks in advance and adjust pricing configurations 24/7 automatically using Ewan AI."
+        }
+      ]
     },
     trusted: {
       title: "Trusted by leading hotel groups and boutique stays globally"
@@ -602,7 +624,24 @@ export const translations = {
         bookings: "حجز يومي",
         occupancy: "متوسط نسبة الإشغال",
         revenue: "نمو الإيرادات"
-      }
+      },
+      slides: [
+        {
+          title: "إدارة فندقك بالكامل من",
+          highlight: "منصة ذكية واحدة",
+          subtitle: "سهّل عمليات تسجيل الوصول، وإدارة الغرف، وتوزيع مهام التدبير المنزلي تلقائياً ومن أي جهاز."
+        },
+        {
+          title: "ضاعف أرباحك وعزز حجم",
+          highlight: "حجوزاتك المباشرة",
+          subtitle: "وداعاً للعمولات المرتفعة لوكالات السفر. حوّل موقعك الإلكتروني لقناة مبيعاتك الأولى وبنسبة إشغال قياسية."
+        },
+        {
+          title: "خطط تشغيل مستقبلية يقودها",
+          highlight: "الذكاء الاصطناعي",
+          subtitle: "تنبؤ بنسب الإشغال لـ 6 أسابيع قادمة، واضبط أسعار الغرف ديناميكياً على مدار الساعة لزيادة العائد."
+        }
+      ]
     },
     trusted: {
       title: "موثوق من قبل مجموعات الفنادق الرائدة وأماكن الإقامة الفاخرة عالمياً"

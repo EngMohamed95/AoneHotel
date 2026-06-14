@@ -44,7 +44,7 @@ export const Footer: React.FC = () => {
           {/* Column 1: Brand Info */}
           <div className="lg:col-span-4 flex flex-col gap-4">
             <div className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-accent to-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md">
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-accent to-amber-700 flex items-center justify-center text-white font-bold text-sm shadow-md">
                 {isRtl ? 'إيوان' : 'EW'}
               </div>
               <span className="text-lg font-bold tracking-tight text-white">

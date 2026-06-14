@@ -31,7 +31,7 @@ export const ThemeToggle: React.FC = () => {
             exit={{ y: -20, opacity: 0, rotate: -45 }}
             transition={{ duration: 0.2 }}
           >
-            <Moon className="w-4 h-4 text-indigo-600" />
+            <Moon className="w-4 h-4 text-amber-500" />
           </motion.div>
         )}
       </AnimatePresence>
