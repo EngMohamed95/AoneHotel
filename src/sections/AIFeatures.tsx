@@ -80,13 +80,10 @@ export const AIFeatures: React.FC = () => {
           </p>
         </div>
 
-        {/* AI Grid Layout (Asymmetric grid with a large feature card and secondary grid) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 text-start">
+        {/* AI Grid Layout (Balanced flex layout with centered elements on the last row) */}
+        <div className="flex flex-wrap justify-center gap-8 text-start">
           
           {aiModules.map((module, idx) => {
-            // Span 3 columns on large screens for the first two items to create visual variance
-            const isSpan3 = idx < 2;
-            
             return (
               <motion.div
                 key={module.key}
@@ -94,7 +91,7 @@ export const AIFeatures: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: idx * 0.08 }}
-                className={`lg:col-span-${isSpan3 ? '3' : '2'} relative group h-full`}
+                className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] min-w-[300px] relative group flex flex-col"
               >
                 {/* Glowing Aura Hover Effect */}
                 <div
@@ -103,7 +100,7 @@ export const AIFeatures: React.FC = () => {
                 />
 
                 {/* Glassmorphism Card Container */}
-                <div className="relative h-full rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl p-8 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between gap-8 group-hover:-translate-y-1 shadow-2xl">
+                <div className="relative flex-grow rounded-2xl border border-slate-800/80 bg-slate-900/40 backdrop-blur-xl p-8 hover:border-slate-700/80 transition-all duration-300 flex flex-col justify-between gap-8 group-hover:-translate-y-1 shadow-2xl">
                   {/* Glowing Top-Border Effect */}
                   <div className="absolute top-0 inset-x-8 h-[2px] bg-gradient-to-r from-transparent via-amber-500/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
