@@ -17,10 +17,10 @@ export default {
           hover: '#334155',
         },
         accent: {
-          DEFAULT: '#3B82F6',
-          dark: '#1D4ED8',
-          light: '#60A5FA',
-          glow: 'rgba(59, 130, 246, 0.15)',
+          DEFAULT: '#F59E0B',
+          dark: '#D97706',
+          light: '#FBBF24',
+          glow: 'rgba(245, 158, 11, 0.15)',
         },
         success: {
           DEFAULT: '#10B981',
