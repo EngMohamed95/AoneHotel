@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
       
       {/* Decorative Radial Glowing Circles */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-accent/10 blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 rounded-full bg-indigo-500/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-96 h-96 rounded-full bg-amber-500/5 blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
                 // Style some words with gradients to create premium visual emphasis
                 const isHighlight = i >= 4 && i <= 6;
                 return (
-                  <span key={i} className={isHighlight ? "bg-gradient-to-r from-accent to-indigo-500 bg-clip-text text-transparent" : ""}>
+                  <span key={i} className={isHighlight ? "bg-gradient-to-r from-accent to-amber-600 bg-clip-text text-transparent" : ""}>
                     {word}{' '}
                   </span>
                 );
@@ -147,8 +147,8 @@ export const Hero: React.FC = () => {
                       {/* Visual waves / lines */}
                       <div className="w-full h-10 relative flex items-end">
                         <svg className="w-full h-full" viewBox="0 0 100 40">
-                          <path d="M 0 35 Q 20 10 40 25 T 80 15 T 100 20 L 100 40 L 0 40 Z" fill="rgba(59, 130, 246, 0.1)" />
-                          <path d="M 0 35 Q 20 10 40 25 T 80 15 T 100 20" fill="none" stroke="#3B82F6" strokeWidth={1.5} />
+                          <path d="M 0 35 Q 20 10 40 25 T 80 15 T 100 20 L 100 40 L 0 40 Z" fill="rgba(245, 158, 11, 0.1)" />
+                          <path d="M 0 35 Q 20 10 40 25 T 80 15 T 100 20" fill="none" stroke="#F59E0B" strokeWidth={1.5} />
                         </svg>
                       </div>
                     </div>
