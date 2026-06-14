@@ -72,7 +72,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.channelManager.title'),
           desc: t('features.channelManager.desc'),
-          img: '/images/room.png',
+          img: '/images/channel_manager.png',
           items: [
             { t: t('features.channelManager.f1'), d: t('features.channelManager.f1d') },
             { t: t('features.channelManager.f2'), d: t('features.channelManager.f2d') },
@@ -84,7 +84,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.revenue.title'),
           desc: t('features.revenue.desc'),
-          img: '/images/room.png',
+          img: '/images/revenue.png',
           items: [
             { t: t('features.revenue.f1'), d: t('features.revenue.f1d') },
             { t: t('features.revenue.f2'), d: t('features.revenue.f2d') },
@@ -95,7 +95,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.crm.title'),
           desc: t('features.crm.desc'),
-          img: '/images/reception.png',
+          img: '/images/crm.png',
           items: [
             { t: t('features.crm.f1'), d: t('features.crm.f1d') },
             { t: t('features.crm.f2'), d: t('features.crm.f2d') },
@@ -106,7 +106,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.accounting.title'),
           desc: t('features.accounting.desc'),
-          img: '/images/dining.png',
+          img: '/images/accounting.png',
           items: [
             { t: t('features.accounting.f1'), d: t('features.accounting.f1d') },
             { t: t('features.accounting.f2'), d: t('features.accounting.f2d') },
@@ -130,7 +130,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.inventory.title'),
           desc: t('features.inventory.desc'),
-          img: '/images/dining.png',
+          img: '/images/inventory.png',
           items: [
             { t: t('features.inventory.f1'), d: t('features.inventory.f1d') },
             { t: t('features.inventory.f2'), d: t('features.inventory.f2d') },
@@ -141,7 +141,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.hr.title'),
           desc: t('features.hr.desc'),
-          img: '/images/reception.png',
+          img: '/images/hr.png',
           items: [
             { t: t('features.hr.f1'), d: t('features.hr.f1d') },
             { t: t('features.hr.f2'), d: t('features.hr.f2d') },
@@ -153,7 +153,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.maintenance.title'),
           desc: t('features.maintenance.desc'),
-          img: '/images/dining.png',
+          img: '/images/maintenance.png',
           items: [
             { t: t('features.maintenance.f1'), d: t('features.maintenance.f1d') },
             { t: t('features.maintenance.f2'), d: t('features.maintenance.f2d') },
@@ -164,7 +164,7 @@ export const Features: React.FC = () => {
         return {
           title: t('features.reports.title'),
           desc: t('features.reports.desc'),
-          img: '/images/room.png',
+          img: '/images/reports.png',
           items: [
             { t: t('features.reports.f1'), d: t('features.reports.f1d') },
             { t: t('features.reports.f2'), d: t('features.reports.f2d') },
