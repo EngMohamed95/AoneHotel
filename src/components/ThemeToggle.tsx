@@ -3,13 +3,21 @@ import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export const ThemeToggle: React.FC = () => {
+interface ThemeToggleProps {
+  scrolled?: boolean;
+}
+
+export const ThemeToggle: React.FC<ThemeToggleProps> = ({ scrolled = true }) => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       onClick={toggleTheme}
-      className="relative p-2 rounded-lg border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-950/40 backdrop-blur hover:bg-slate-100 dark:hover:bg-slate-800/80 text-slate-700 dark:text-slate-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent overflow-hidden"
+      className={`relative p-2 rounded-lg border backdrop-blur transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent overflow-hidden ${
+        scrolled
+          ? 'border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-950/40 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80'
+          : 'border-slate-700 bg-slate-950/20 text-slate-300 hover:bg-slate-800/40 hover:text-white'
+      }`}
       aria-label="Toggle theme"
     >
       <AnimatePresence mode="wait" initial={false}>

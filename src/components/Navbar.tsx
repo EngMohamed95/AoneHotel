@@ -47,7 +47,7 @@ export const Navbar: React.FC = () => {
               <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-accent to-amber-700 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-accent/20 transition-transform duration-300 group-hover:scale-105">
                 {isRtl ? 'إيوان' : 'EW'}
               </div>
-              <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+              <span className={`text-xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? 'text-slate-900 dark:text-white' : 'text-white'}`}>
                 {isRtl ? 'إيوان' : 'Ewan'}<span className="text-accent font-extrabold">.</span>
               </span>
             </a>
@@ -59,7 +59,11 @@ export const Navbar: React.FC = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-accent dark:hover:text-accent hover:bg-slate-100/50 dark:hover:bg-slate-800/40 transition-all duration-200"
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:text-accent ${
+                  scrolled
+                    ? 'text-slate-600 dark:text-slate-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/40'
+                    : 'text-slate-300 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {item.name}
               </a>
@@ -68,11 +72,13 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Controls & CTAs */}
           <div className="hidden lg:flex items-center gap-4">
-            <LanguageSwitcher />
-            <ThemeToggle />
+            <LanguageSwitcher scrolled={scrolled} />
+            <ThemeToggle scrolled={scrolled} />
             <a
               href="#pricing"
-              className="text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-accent dark:hover:text-accent transition-colors duration-200"
+              className={`text-sm font-semibold transition-colors duration-200 hover:text-accent ${
+                scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-300 hover:text-white'
+              }`}
             >
               {t('nav.demo')}
             </a>
@@ -91,11 +97,15 @@ export const Navbar: React.FC = () => {
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            <ThemeToggle />
-            <LanguageSwitcher />
+            <ThemeToggle scrolled={scrolled} />
+            <LanguageSwitcher scrolled={scrolled} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none"
+              className={`p-2 rounded-lg transition-colors focus:outline-none ${
+                scrolled 
+                  ? 'text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800' 
+                  : 'text-slate-300 hover:text-white hover:bg-white/10'
+              }`}
               aria-label="Toggle Menu"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
