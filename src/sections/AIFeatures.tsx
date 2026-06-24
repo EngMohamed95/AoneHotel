@@ -61,16 +61,17 @@ export const AIFeatures: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-xs font-bold text-amber-400 mb-6 uppercase tracking-wider"
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-20"
+        >
+          <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-xs font-bold text-amber-400 mb-6 uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{isRtl ? 'جناح إيوان للذكاء الاصطناعي' : 'Ewan AI Cognitive Suite'}</span>
-          </motion.div>
+          </div>
           
           <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-slate-100 to-amber-400 bg-clip-text text-transparent">
             {t('ai.title')}
@@ -78,7 +79,7 @@ export const AIFeatures: React.FC = () => {
           <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
             {t('ai.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* AI Grid Layout (Balanced flex layout with centered elements on the last row) */}
         <div className="flex flex-wrap justify-center gap-8 text-start">
@@ -89,7 +90,7 @@ export const AIFeatures: React.FC = () => {
                 key={module.key}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: idx * 0.08 }}
                 className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.35rem)] min-w-[300px] relative group flex flex-col"
               >

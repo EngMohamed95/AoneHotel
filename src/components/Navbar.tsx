@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { ThemeToggle } from './ThemeToggle';
-import { Menu, X, ArrowRight, ArrowLeft } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar: React.FC = () => {
@@ -73,31 +72,16 @@ export const Navbar: React.FC = () => {
           {/* Desktop Controls & CTAs */}
           <div className="hidden lg:flex items-center gap-4">
             <LanguageSwitcher scrolled={scrolled} />
-            <ThemeToggle scrolled={scrolled} />
             <a
               href="#pricing"
-              className={`text-sm font-semibold transition-colors duration-200 hover:text-accent ${
-                scrolled ? 'text-slate-700 dark:text-slate-200' : 'text-slate-300 hover:text-white'
-              }`}
+              className="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-sm font-semibold border border-slate-700/40 dark:border-slate-750 shadow-md transition-all duration-300 hover:-translate-y-0.5"
             >
-              {t('nav.demo')}
-            </a>
-            <a
-              href="#pricing"
-              className="group flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-accent hover:bg-accent-dark text-white text-sm font-semibold shadow-lg shadow-accent/25 transition-all duration-300 hover:-translate-y-0.5"
-            >
-              <span>{t('nav.trial')}</span>
-              {isRtl ? (
-                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              ) : (
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              )}
+              {t('nav.trial')}
             </a>
           </div>
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-3 lg:hidden">
-            <ThemeToggle scrolled={scrolled} />
             <LanguageSwitcher scrolled={scrolled} />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -140,17 +124,9 @@ export const Navbar: React.FC = () => {
                 <a
                   href="#pricing"
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center py-3 rounded-xl border border-slate-200 dark:border-slate-800 text-base font-semibold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-850"
+                  className="flex items-center justify-center py-3 rounded-xl bg-slate-800 text-white text-base font-semibold border border-slate-700/40 shadow-lg shadow-slate-900/10"
                 >
-                  {t('nav.demo')}
-                </a>
-                <a
-                  href="#pricing"
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-2 py-3 rounded-xl bg-accent text-white text-base font-semibold shadow-lg shadow-accent/20"
-                >
-                  <span>{t('nav.trial')}</span>
-                  {isRtl ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
+                  {t('nav.trial')}
                 </a>
               </div>
             </div>

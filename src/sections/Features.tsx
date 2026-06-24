@@ -27,17 +27,17 @@ export const Features: React.FC = () => {
 
   // Categories list with corresponding Lucide icons
   const categories: { key: CategoryKey; icon: React.ReactNode }[] = [
-    { key: 'pms', icon: <Building2 className="w-5 h-5" /> },
-    { key: 'bookingEngine', icon: <CalendarRange className="w-5 h-5" /> },
-    { key: 'channelManager', icon: <Shuffle className="w-5 h-5" /> },
-    { key: 'revenue', icon: <TrendingUp className="w-5 h-5" /> },
-    { key: 'crm', icon: <Users2 className="w-5 h-5" /> },
-    { key: 'accounting', icon: <Receipt className="w-5 h-5" /> },
-    { key: 'pos', icon: <Utensils className="w-5 h-5" /> },
-    { key: 'inventory', icon: <Box className="w-5 h-5" /> },
-    { key: 'hr', icon: <ShieldCheck className="w-5 h-5" /> },
-    { key: 'maintenance', icon: <Wrench className="w-5 h-5" /> },
-    { key: 'reports', icon: <BarChart3 className="w-5 h-5" /> },
+    { key: 'pms', icon: <Building2 className="w-6 h-6" /> },
+    { key: 'bookingEngine', icon: <CalendarRange className="w-6 h-6" /> },
+    { key: 'channelManager', icon: <Shuffle className="w-6 h-6" /> },
+    { key: 'revenue', icon: <TrendingUp className="w-6 h-6" /> },
+    { key: 'crm', icon: <Users2 className="w-6 h-6" /> },
+    { key: 'accounting', icon: <Receipt className="w-6 h-6" /> },
+    { key: 'pos', icon: <Utensils className="w-6 h-6" /> },
+    { key: 'inventory', icon: <Box className="w-6 h-6" /> },
+    { key: 'hr', icon: <ShieldCheck className="w-6 h-6" /> },
+    { key: 'maintenance', icon: <Wrench className="w-6 h-6" /> },
+    { key: 'reports', icon: <BarChart3 className="w-6 h-6" /> },
   ];
 
   // Helper to extract feature details dynamically from translations, including category images
@@ -184,14 +184,20 @@ export const Features: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
             {t('features.title')}
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400">
             {t('features.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* Categories Tab Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">

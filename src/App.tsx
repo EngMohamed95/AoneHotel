@@ -1,5 +1,5 @@
+import { useEffect } from 'react';
 import { LanguageProvider } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './sections/Hero';
 import { TrustedBy } from './sections/TrustedBy';
@@ -16,7 +16,7 @@ import { Footer } from './sections/Footer';
 
 function LandingPageContent() {
   return (
-    <div className="min-h-screen flex flex-col font-sans select-none overflow-x-hidden bg-brandBg-light dark:bg-brandBg-dark text-slate-800 dark:text-slate-100 transition-colors duration-300">
+    <div className="min-h-screen flex flex-col font-sans select-none overflow-x-hidden bg-brandBg-light text-slate-800 transition-colors duration-300">
       <Navbar />
       <main className="flex-1 flex flex-col">
         <Hero />
@@ -37,11 +37,17 @@ function LandingPageContent() {
 }
 
 export default function App() {
+  useEffect(() => {
+    // Clean up dark mode settings from root and storage
+    const root = document.documentElement;
+    root.classList.remove('dark');
+    root.style.colorScheme = 'light';
+    localStorage.removeItem('ewan_theme');
+  }, []);
+
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <LandingPageContent />
-      </LanguageProvider>
-    </ThemeProvider>
+    <LanguageProvider>
+      <LandingPageContent />
+    </LanguageProvider>
   );
 }

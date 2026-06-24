@@ -71,7 +71,7 @@ export const Showcase: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="p-4 rounded-xl border border-slate-200/50 dark:border-slate-800/40 bg-white/50 dark:bg-slate-900/40 backdrop-blur shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
             >

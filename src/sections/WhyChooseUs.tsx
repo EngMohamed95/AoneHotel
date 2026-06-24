@@ -2,6 +2,7 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { GlassCard } from '../components/GlassCard';
 import { Zap, DollarSign, Heart, Cloud, ShieldCheck, Maximize2 } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const WhyChooseUs: React.FC = () => {
   const { t, isRtl } = useLanguage();
@@ -47,20 +48,32 @@ export const WhyChooseUs: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
             {t('whyUs.title')}
           </h2>
           <p className="text-lg text-slate-500 dark:text-slate-400">
             {t('whyUs.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* 2-Column Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch text-start">
           
           {/* Visual Showcase Card (dining.png) - 4 cols on large screens */}
-          <div className="lg:col-span-4 rounded-3xl border border-slate-200/50 dark:border-slate-800/40 overflow-hidden relative group shadow-xl min-h-[350px] lg:min-h-auto flex flex-col justify-end">
+          <motion.div
+            initial={{ opacity: 0, x: isRtl ? 30 : -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-4 rounded-3xl border border-slate-200/50 dark:border-slate-800/40 overflow-hidden relative group shadow-xl min-h-[350px] lg:min-h-auto flex flex-col justify-end"
+          >
             <img 
               src="/images/dining.png" 
               alt="Premium Hotel Dining Service" 
@@ -82,7 +95,7 @@ export const WhyChooseUs: React.FC = () => {
                   : 'From checks at the reception to dining at the restaurant table, Ewan provides complete service flow automation for a memorable guest experience.'}
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Benefits Grid - 8 cols on large screens */}
           <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">

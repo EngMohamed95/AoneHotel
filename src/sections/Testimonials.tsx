@@ -46,7 +46,7 @@ export const Testimonials: React.FC = () => {
               key={idx}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: idx * 0.1 }}
             >
               <GlassCard

@@ -19,7 +19,13 @@ export const FAQ: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-xs font-semibold text-accent mb-4">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Support Center</span>
@@ -30,10 +36,16 @@ export const FAQ: React.FC = () => {
           <p className="text-lg text-slate-500 dark:text-slate-400">
             {t('faq.subtitle')}
           </p>
-        </div>
+        </motion.div>
 
         {/* FAQ List */}
-        <div className="flex flex-col gap-4 text-start">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex flex-col gap-4 text-start"
+        >
           {faqItems.map((item, idx) => {
             const isOpen = openIdx === idx;
             
@@ -76,7 +88,7 @@ export const FAQ: React.FC = () => {
               </GlassCard>
             );
           })}
-        </div>
+        </motion.div>
 
       </div>
     </section>

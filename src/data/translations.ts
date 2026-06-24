@@ -258,7 +258,7 @@ export const translations = {
       pricing: "Pricing",
       faq: "FAQ",
       demo: "Book Demo",
-      trial: "Start Free Trial"
+      trial: "Start Your Project"
     },
     hero: {
       badge: "The Next-Gen Hotel Management System",
@@ -611,7 +611,7 @@ export const translations = {
       pricing: "الأسعار",
       faq: "الأسئلة الشائعة",
       demo: "احجز تجربة",
-      trial: "ابدأ مجاناً"
+      trial: "ابدأ مشروعك"
     },
     hero: {
       badge: "الجيل القادم من أنظمة إدارة الفنادق",

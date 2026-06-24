@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion } from 'framer-motion';
 
 export const TrustedBy: React.FC = () => {
   const { t } = useLanguage();
@@ -45,31 +46,38 @@ export const TrustedBy: React.FC = () => {
 
   return (
     <section className="py-10 border-y border-slate-200/50 dark:border-slate-800/40 bg-white/40 dark:bg-slate-950/20 backdrop-blur-sm overflow-hidden select-none">
-      <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
-        <p className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
-          {t('trusted.title')}
-        </p>
-      </div>
-
-      {/* Marquee Wrapper */}
-      <div className="relative w-full flex items-center overflow-hidden">
-        {/* Left and Right glass fades */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brandBg-light dark:from-brandBg-dark to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brandBg-light dark:from-brandBg-dark to-transparent z-10 pointer-events-none" />
-
-        {/* Scrolling list */}
-        <div className="flex gap-20 w-max animate-marquee py-2 hover:[animation-play-state:paused] transition-all duration-300">
-          {marqueeItems.map((logo, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center text-slate-500 dark:text-slate-400 opacity-60 hover:opacity-100 hover:text-accent hover:scale-105 transition-all duration-300 cursor-pointer"
-              title={logo.name}
-            >
-              {logo.icon}
-            </div>
-          ))}
+      <motion.div
+        initial={{ opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500">
+            {t('trusted.title')}
+          </p>
         </div>
-      </div>
+
+        {/* Marquee Wrapper */}
+        <div className="relative w-full flex items-center overflow-hidden">
+          {/* Left and Right glass fades */}
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-brandBg-light dark:from-brandBg-dark to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-brandBg-light dark:from-brandBg-dark to-transparent z-10 pointer-events-none" />
+
+          {/* Scrolling list */}
+          <div className="flex gap-20 w-max animate-marquee py-2 hover:[animation-play-state:paused] transition-all duration-300">
+            {marqueeItems.map((logo, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center text-slate-500 dark:text-slate-400 opacity-60 hover:opacity-100 hover:text-accent hover:scale-105 transition-all duration-300 cursor-pointer"
+                title={logo.name}
+              >
+                {logo.icon}
+              </div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };

@@ -16,15 +16,15 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ scrolled = t
   return (
     <button
       onClick={toggleLanguage}
-      className={`flex items-center gap-2 px-3 py-1.5 rounded-lg border backdrop-blur text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent ${
+      className={`flex items-center gap-1.5 px-2 py-1.5 rounded-lg text-sm font-semibold transition-all duration-200 focus:outline-none ${
         scrolled 
-          ? 'border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-slate-950/40 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/80' 
-          : 'border-slate-700 bg-slate-950/20 text-slate-300 hover:bg-slate-800/40 hover:text-white'
+          ? 'text-slate-700 dark:text-slate-200 hover:text-accent dark:hover:text-accent' 
+          : 'text-slate-300 hover:text-white'
       }`}
       aria-label={lang === 'en' ? 'تغيير اللغة إلى العربية' : 'Change language to English'}
     >
-      <Globe className="w-4 h-4 text-accent animate-pulse-slow" />
-      <span>{lang === 'en' ? 'العربية' : 'English'}</span>
+      <Globe className="w-4.5 h-4.5" />
+      <span className="uppercase">{lang === 'en' ? 'ar' : 'en'}</span>
     </button>
   );
 };

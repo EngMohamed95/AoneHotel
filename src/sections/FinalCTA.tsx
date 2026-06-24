@@ -30,7 +30,7 @@ export const FinalCTA: React.FC = () => {
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6 }}
               className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight"
             >
@@ -41,7 +41,7 @@ export const FinalCTA: React.FC = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-base sm:text-lg text-slate-100 dark:text-slate-200 font-medium mb-10 max-w-xl leading-relaxed"
             >
@@ -52,7 +52,7 @@ export const FinalCTA: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-6"
             >
@@ -79,7 +79,7 @@ export const FinalCTA: React.FC = () => {
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xs text-slate-200/90 font-medium tracking-wide"
             >

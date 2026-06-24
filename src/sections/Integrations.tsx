@@ -98,7 +98,13 @@ export const Integrations: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Column: Descriptive text */}
-          <div className="lg:col-span-4 text-center lg:text-start flex flex-col items-center lg:items-start">
+          <motion.div
+            initial={{ opacity: 0, x: isRtl ? 30 : -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-4 text-center lg:text-start flex flex-col items-center lg:items-start"
+          >
             <div className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-xs font-semibold text-accent mb-4">
               <Link2 className="w-3.5 h-3.5 animate-spin-slow" />
               <span>Direct Sync APIs</span>
@@ -115,9 +121,9 @@ export const Integrations: React.FC = () => {
               href="#pricing"
               className="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-slate-800 dark:hover:bg-slate-750 text-white font-bold text-sm shadow-md transition-all duration-300 hover:-translate-y-0.5"
             >
-              {t('nav.demo')}
+              {t('nav.trial')}
             </a>
-          </div>
+          </motion.div>
 
           {/* Right Column: Grid of integrated tools */}
           <div className="lg:col-span-8">
@@ -127,7 +133,7 @@ export const Integrations: React.FC = () => {
                   key={idx}
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false }}
                   transition={{ duration: 0.5, delay: idx * 0.05 }}
                 >
                   <GlassCard
